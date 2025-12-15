@@ -21,31 +21,12 @@ class Bike(Veiculo):
     def calcular_valor(self, saida):
         return 3.00
     
-    def estacionar(self, tipo, id):
-        if tipo == "bike":
-            v = Bike(id, "Bike")
-        elif tipo == "moto":
-            v = Moto(id, "Moto")
-        elif tipo == "carro":
-            v = Carro(id, "Carro")
-
-        v.entrada = self.tempo_atual
-        self.veiculos.append(v)
     
 class Moto(Veiculo):
     def calcular_valor(self, saida):
         return self.tempo(saida) / 20
     
-    def estacionar(self, tipo, id):
-        if tipo == "bike":
-            v = Bike(id, "Bike")
-        elif tipo == "moto":
-            v = Moto(id, "Moto")
-        elif tipo == "carro":
-            v = Carro(id, "Carro")
-
-        v.entrada = self.tempo_atual
-        self.veiculos.append(v)
+    
     
     
 class Carro(Veiculo):
@@ -53,16 +34,7 @@ class Carro(Veiculo):
         valor = self.tempo(saida) / 10
         return max(valor, 5.00)
     
-    def estacionar(self, tipo, id):
-        if tipo == "bike":
-            v = Bike(id, "Bike")
-        elif tipo == "moto":
-            v = Moto(id, "Moto")
-        elif tipo == "carro":
-            v = Carro(id, "Carro")
 
-        v.entrada = self.tempo_atual
-        self.veiculos.append(v)
 
     
 class Estacionamento:
